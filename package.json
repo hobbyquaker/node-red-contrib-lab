@@ -1,0 +1,54 @@
+{
+  "name": "node-red-contrib-lab",
+  "version": "0.0.1",
+  "description": "Nodes to interact with laboratory equipment (Multimeter UNI-T UT803, Power Supply Hanmatek HM310P, Electronic Load XY-FZ35)",
+  "main": "none",
+  "scripts": {
+    "test": "xo",
+    "lintfix": "xo --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hobbyquaker/node-red-contrib-lab.git"
+  },
+  "keywords": [
+    "node-red",
+    "labratory",
+    "multimeter",
+    "power",
+    "supply",
+    "electronic",
+    "load",
+    "ut803",
+    "hm310p",
+    "xy-fz35"
+  ],
+  "author": "Sebastian.Raff <hobbyquaker@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hobbyquaker/node-red-contrib-lab/issues"
+  },
+  "homepage": "https://github.com/hobbyquaker/node-red-contrib-lab#readme",
+  "devDependencies": {
+    "xo": "^0.32.1"
+  },
+  "node-red": {
+    "nodes": {
+      "lab-fz35": "nodes/lab-fz35.js",
+      "lab-hm310p": "nodes/lab-hm310p.js",
+      "lab-ut803": "nodes/lab-ut803.js"
+    }
+  },
+  "xo": {
+    "space": 4,
+    "rules": {
+      "spaced-comment": 0,
+      "capitalized-comments": 0,
+      "unicorn/prevent-abbreviations": "warn"
+    }
+  },
+  "dependencies": {
+    "modbus-serial": "^8.0.0",
+    "serialport": "^9.0.0"
+  }
+}

@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    RED.nodes.registerType('lab-fz35-config',{
+        category: 'config',
+        defaults: {
+            name: {value: ''},
+            path: {value: '/dev/ttyACM0', required: true},
+        },
+        label: function() {
+            return this.name || 'fz35 config'
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="lab-fz35-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-path"><i class="icon-bookmark"></i> Path</label>
+        <input type="text" id="node-config-input-path">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('lab-fz35', {
+        category: 'lab',
+        defaults: {
+            port: {value: "", type: "lab-fz35-config"},
+            topic: {value: "", type: "string"},
+        },
+        outputs: 1,
+        inputs: 1,
+        icon: "font-awesome/fa-flask",
+        align: 'left',
+        color: '#3FADB5',
+        label: function () {
+            return this.name || 'fz35'
+        },
+        paletteLabel: function () {
+            return this.name || 'fz35'
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="lab-fz35">
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-input-port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-bookmark"></i> Topic</label>
+        <input type="text" id="node-input-topic">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="lab-hm310p">
+    <h3>Input topic</h3>
+    <ul>
+        <li>powerSwitch</li>
+        <li>setCurrent</li>
+        <li>LVP</li>
+        <li>OVP</li>
+        <li>OCP</li>
+        <li>OPP</li>
+        <li>OAH</li>
+        <li>OHP</li>
+    </ul>
+</script>

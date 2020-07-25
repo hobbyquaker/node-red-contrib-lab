@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('lab-ut803-config',{
+        category: 'config',
+        defaults: {
+            name: {value: ''},
+            path: {value: '/dev/ttyACM0', required: true},
+        },
+        label: function() {
+            return this.name || 'ut803 config'
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="lab-ut803-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="icon-bookmark"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-path"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-config-input-path">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('lab-ut803', {
+        category: 'lab',
+        defaults: {
+            port: {value: '', type: "lab-ut803-config"},
+            topic: {value: '', type: 'string'}
+        },
+        outputs: 1,
+        icon: "font-awesome/fa-flask",
+        align: 'left',
+        color: '#3FADB5',
+        label: function () {
+            return this.name || 'ut803'
+        },
+        paletteLabel: function () {
+            return this.name || 'ut803'
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="lab-ut803">
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-input-port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-bookmark"></i> Topic</label>
+        <input type="text" id="node-input-topic">
+    </div>
+</script>
